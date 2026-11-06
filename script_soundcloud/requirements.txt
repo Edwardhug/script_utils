@@ -1,0 +1,5 @@
+yt-dlp[default,curl-cffi]
+requests
+mutagen
+PyYAML
+rich

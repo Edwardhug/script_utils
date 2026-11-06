@@ -1,0 +1,60 @@
+# Configuration harvest — copier vers config.yaml et adapter.
+slskd:
+  url: http://localhost:5030
+  api_key: ""            # System > API Keys dans l'interface slskd (rôle readwrite)
+  wait_timeout_s: 900
+
+paths:
+  data_dir: data
+  downloads_dir: data/slskd/downloads
+  staging_dir: data/staging
+  music_dir: /mnt/e/Music/dj
+  reports_dir: reports
+  cache_dir: data/cache/soundcloud
+
+quality:
+  preferred_ext: [flac, wav, mp3]
+  min_mp3_bitrate: 320
+  duration_tolerance_s: 4
+
+search:
+  wait_timeout_s: 20
+  max_candidates_kept: 10
+  min_candidate_score: 25
+  interval_s: 2
+
+download:
+  poll_interval_s: 5
+  track_timeout_s: 900
+  max_candidate_tries: 3
+  max_active: 6
+
+organize:
+  filename_template: "{artist} - {title} [{quality}]"
+  unknown_genre_folder: "_À classer"
+  genre_map:
+    hard techno: Hard Techno
+    hardtechno: Hard Techno
+    schranz: Hard Techno
+    acidcore: Hard Techno
+    techno: Techno
+    minimal: Techno
+    tech house: Tech House
+    house: House
+    deep house: House
+    afro house: House
+    drum & bass: Drum & Bass
+    drum and bass: Drum & Bass
+    dnb: Drum & Bass
+    jungle: Drum & Bass
+    trance: Trance
+    hardcore: Hardcore
+    rap: Hip-Hop
+    hip hop: Hip-Hop
+    trap: Hip-Hop
+    disco: Disco / Funk
+    funk: Disco / Funk
+
+soundcloud:
+  likes_url: https://soundcloud.com/other_choice/likes
+  delay_s: 1.2

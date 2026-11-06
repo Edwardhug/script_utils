@@ -1,0 +1,15 @@
+services:
+  slskd:
+    image: slskd/slskd:latest
+    container_name: slskd
+    restart: unless-stopped
+    environment:
+      - SLSKD_REMOTE_CONFIGURATION=true
+    ports:
+      - "5030:5030/tcp"    # interface web + API
+      - "50300:50300/tcp"  # connexions entrantes Soulseek
+    volumes:
+      - ./data/slskd/app:/app            # config + base slskd
+      - ./data/slskd/downloads:/downloads # fichiers terminés
+      - ./data/slskd/incomplete:/incomplete
+      - /mnt/e/Music/dj:/music            # bibliothèque partagée + finale
